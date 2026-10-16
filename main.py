@@ -1,4 +1,3 @@
-
 import os
 import re
 import json
@@ -21,7 +20,7 @@ OLLAMA_URL = os.getenv(
 ).rstrip("/")
 
 OLLAMA_MODEL = os.getenv(
-    "OLLAMA_MODEL", "qwen3.5:latest"
+    "OLLAMA_MODEL", "nemotron-mini:4b"
 )
 
 FALKORDB_HOST = os.getenv("FALKORDB_HOST", "localhost")
@@ -42,7 +41,7 @@ db = FalkorDB(
     socket_timeout=10,
 )
 
-graph = db.select_graph("RAG2")
+graph = db.select_graph("RAG3")
 
 
 def now():
